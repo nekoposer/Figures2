@@ -24,7 +24,7 @@ public class Sphere extends Figure {
     }
 
     @Override
-    public void isArea() {
+    public double isArea() {
         double radius = 0;
         if (coords.get(0).size() == Const.XY_COORDS) {
             double xLength = Math.pow((coords.get(Const.POINT_ONE).get(Const.X_FROM_COORDS) - coords.get(Const.POINT_ZERO).get(Const.X_FROM_COORDS)), 2);
@@ -39,5 +39,6 @@ public class Sphere extends Figure {
 
         double area = 2 * 2 * Math.PI * Math.pow(radius, 2);
         System.out.printf("The figure area %.2f", area);
+        return area;
     }
 }

@@ -90,40 +90,46 @@ public class Square extends Figure {
     }
 
     @Override
-    public void isArea() {
+    public double isArea() {
+        double area = 0;
         if (coords.get(0).size() == Const.XY_COORDS) {
             double xLine = Math.pow(coords.get(Const.POINT_ONE).get(Const.X_FROM_COORDS) - coords.get(Const.POINT_ZERO).get(Const.X_FROM_COORDS), 2);
             double yLine = Math.pow(coords.get(Const.POINT_ONE).get(Const.Y_FROM_COORDS) - coords.get(Const.POINT_ZERO).get(Const.Y_FROM_COORDS), 2);
             double firstLine = Math.sqrt(xLine + yLine);
-            
-            System.out.printf("The figure area %.2f", Math.pow(firstLine, 2));
+
+            area = Math.pow(firstLine, 2);
+            System.out.printf("The figure area %.2f", area);
         } else if (coords.get(0).size() == Const.XYZ_COORDS) {
             double xLine = Math.pow(coords.get(Const.POINT_ONE).get(Const.X_FROM_COORDS) - coords.get(Const.POINT_ZERO).get(Const.X_FROM_COORDS), 2);
             double yLine = Math.pow(coords.get(Const.POINT_ONE).get(Const.Y_FROM_COORDS) - coords.get(Const.POINT_ZERO).get(Const.Y_FROM_COORDS), 2);
             double zLine = Math.pow(coords.get(Const.POINT_ONE).get(Const.Z_FROM_COORDS) - coords.get(Const.POINT_ZERO).get(Const.Z_FROM_COORDS), 2);
             double firstLine = Math.sqrt(xLine + yLine + zLine);
-            
-            System.out.printf("The figure area %.2f", Math.pow(firstLine, 2));
 
+            area = Math.pow(firstLine, 2);
+            System.out.printf("The figure area %.2f", area);
         }
+        return area;
     }
 
     @Override
-    public void isPerimeter() {
+    public double isPerimeter() {
+        double perimeter = 0;
         if (coords.get(0).size() == Const.XY_COORDS) {
             double xLine = Math.pow(coords.get(Const.POINT_ONE).get(Const.X_FROM_COORDS) - coords.get(Const.POINT_ZERO).get(Const.X_FROM_COORDS), 2);
             double yLine = Math.pow(coords.get(Const.POINT_ONE).get(Const.Y_FROM_COORDS) - coords.get(Const.POINT_ZERO).get(Const.Y_FROM_COORDS), 2);
             double firstLine = Math.sqrt(xLine + yLine);
-            
-            System.out.printf("\nThe figure perimeter %.2f", 4 * firstLine);
+
+            perimeter = 4 * firstLine;
+            System.out.printf("\nThe figure perimeter %.2f", perimeter);
         } else if (coords.get(0).size() == Const.XYZ_COORDS) {
             double xLine = Math.pow(coords.get(Const.POINT_ONE).get(Const.X_FROM_COORDS) - coords.get(Const.POINT_ZERO).get(Const.X_FROM_COORDS), 2);
             double yLine = Math.pow(coords.get(Const.POINT_ONE).get(Const.Y_FROM_COORDS) - coords.get(Const.POINT_ZERO).get(Const.Y_FROM_COORDS), 2);
             double zLine = Math.pow(coords.get(Const.POINT_ONE).get(Const.Z_FROM_COORDS) - coords.get(Const.POINT_ZERO).get(Const.Z_FROM_COORDS), 2);
             double firstLine = Math.sqrt(xLine + yLine + zLine);
-            
-            System.out.printf("\nThe figure perimeter %.2f", 4 * firstLine);
-        }
-    }
 
+            perimeter = 4 * firstLine;
+            System.out.printf("\nThe figure perimeter %.2f", perimeter);
+        }
+        return perimeter;
+    }
 }

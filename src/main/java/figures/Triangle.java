@@ -64,21 +64,17 @@ public class Triangle extends Figure {
     }
 
     @Override
-    public void isArea() {
-        if (coords.get(0).size() == Const.XY_COORDS) {
-            System.out.printf("The figure area %.2f", area(coords).get(1));
-        } else if (coords.get(0).size() == Const.XYZ_COORDS) {
-            System.out.printf("The figure area %.2f", area(coords).get(1));
-        }
+    public double isArea() {
+        double figureArea = area(coords).get(1);
+        System.out.printf("The figure area %.2f", figureArea);
+        return figureArea;
     }
 
     @Override
-    public void isPerimeter() {
-        if (coords.get(0).size() == Const.XY_COORDS) {
-            System.out.printf("\nThe figure perimeter %.2f", area(coords).get(0) * 2);
-        } else if (coords.get(0).size() == Const.XYZ_COORDS) {
-            System.out.printf("\nThe figure perimeter%.2f", area(coords).get(0) * 2);
-        }
+    public double isPerimeter() {
+        double perimeter = area(coords).get(0) * 2;
+        System.out.printf("\nThe figure perimeter %.2f", perimeter);
+        return perimeter;
     }
 
 }

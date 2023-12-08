@@ -38,11 +38,10 @@ public class Polygon extends Figure {
         }
         System.out.println("The figure is invalid\n");
         return false;
-
     }
 
     @Override
-    public void isArea() {
+    public double isArea() {
         double sFirst = 0;
         double sSecond = 0;
 
@@ -52,10 +51,11 @@ public class Polygon extends Figure {
         }
         double area = Math.abs(sFirst - sSecond) / 2;
         System.out.printf("The figure area %.2f \n", area);
+        return area;
     }
 
     @Override
-    public void isPerimeter() {
+    public double isPerimeter() {
         double perimeter = 0;
         for (int i = 1; i < coords.size(); ++i) {
             double xLine = Math.pow(coords.get(i).get(Const.X_FROM_COORDS) - coords.get(i - 1).get(Const.X_FROM_COORDS), 2);
@@ -65,6 +65,6 @@ public class Polygon extends Figure {
         }
         perimeter += Math.sqrt(Math.pow(coords.get(0).get(Const.X_FROM_COORDS) - coords.get(coords.size() - 1).get(Const.X_FROM_COORDS), 2) + Math.pow(coords.get(0).get(Const.Y_FROM_COORDS) - coords.get(coords.size() - 1).get(Const.Y_FROM_COORDS), 2));
         System.out.printf("The figure perimeter %.2f", perimeter);
+        return perimeter;
     }
-
 }

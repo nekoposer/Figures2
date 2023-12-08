@@ -37,7 +37,7 @@ public class TruncatedSphere extends Figure {
     }
 
     @Override
-    public void isArea() {
+    public double isArea() {
         ArrayList<Integer> tempPoint = new ArrayList<>();
         tempPoint.add(coords.get(Const.POINT_ZERO).get(Const.X_FROM_COORDS));
         tempPoint.add(coords.get(Const.POINT_ZERO).get(Const.Y_FROM_COORDS));
@@ -61,5 +61,7 @@ public class TruncatedSphere extends Figure {
         double areaDisk = Math.PI * Math.pow(radiusMin, 2);
         double area = areaSphere - areaSegment + areaDisk;
         System.out.printf("The figure area %.2f", area);
+
+        return area;
     }
 }

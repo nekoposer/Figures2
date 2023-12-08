@@ -49,7 +49,7 @@ public class Cylinder extends Figure {
     }
 
     @Override
-    public void isArea() {
+    public double isArea() {
         double xZero = coords.get(Const.POINT_ONE).get(Const.X_FROM_COORDS) - coords.get(Const.POINT_ZERO).get(Const.X_FROM_COORDS);
         double yZero = coords.get(Const.POINT_ONE).get(Const.Y_FROM_COORDS) - coords.get(Const.POINT_ZERO).get(Const.Y_FROM_COORDS);
         double zZero = coords.get(Const.POINT_ONE).get(Const.Z_FROM_COORDS) - coords.get(Const.POINT_ZERO).get(Const.Z_FROM_COORDS);
@@ -70,5 +70,6 @@ public class Cylinder extends Figure {
 
         double area = 2 * Math.PI * radius * (radius + height);
         System.out.printf("The figure area %.2f \n", area);
+        return area;
     }
 }

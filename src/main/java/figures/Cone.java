@@ -13,6 +13,9 @@ public class Cone extends Figure {
 
     @Override
     public boolean isValid() {
+        if (coords.size() != Const.POINT_THREE) {
+            return false;
+        }
         if (coords.get(Const.POINT_ZERO).size() == Const.XYZ_COORDS
             && coords.get(Const.POINT_ONE).size() == Const.XYZ_COORDS
             && coords.get(Const.POINT_TWO).size() == Const.XYZ_COORDS) {
@@ -36,7 +39,7 @@ public class Cone extends Figure {
     }
 
     @Override
-    public void isArea() {
+    public double isArea() {
         double xZero = coords.get(Const.POINT_ONE).get(Const.X_FROM_COORDS) - coords.get(Const.POINT_ZERO).get(Const.X_FROM_COORDS); // точка на окружности - центр окружности
         double yZero = coords.get(Const.POINT_ONE).get(Const.Y_FROM_COORDS) - coords.get(Const.POINT_ZERO).get(Const.Y_FROM_COORDS);
         double zZero = coords.get(Const.POINT_ONE).get(Const.Z_FROM_COORDS) - coords.get(Const.POINT_ZERO).get(Const.Z_FROM_COORDS);
@@ -49,5 +52,6 @@ public class Cone extends Figure {
         double length = Math.sqrt(Math.pow(xTwo, 2) + Math.pow(yTwo, 2) + Math.pow(zTwo, 2));
         double area = Math.PI * radius * (radius + length);
         System.out.printf("The figure area %.2f \n", area);
+        return area;
     }
 }

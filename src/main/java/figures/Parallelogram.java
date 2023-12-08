@@ -74,7 +74,8 @@ public class Parallelogram extends Figure {
     }
 
     @Override
-    public void isArea() {
+    public double isArea() {
+        double area = 0;
         if (coords.get(0).size() == Const.XY_COORDS) {
             double xLine = Math.pow(coords.get(Const.POINT_TWO).get(Const.X_FROM_COORDS) - coords.get(Const.POINT_ZERO).get(Const.X_FROM_COORDS), 2);
             double yLine = Math.pow(coords.get(Const.POINT_TWO).get(Const.Y_FROM_COORDS) - coords.get(Const.POINT_ZERO).get(Const.Y_FROM_COORDS), 2);
@@ -91,7 +92,8 @@ public class Parallelogram extends Figure {
             double yTwo = coords.get(Const.POINT_THREE).get(Const.Y_FROM_COORDS) - coords.get(Const.POINT_ONE).get(Const.Y_FROM_COORDS);
             
             double cos = (xOne * xTwo + yOne * yTwo) / Math.sqrt((Math.pow(xOne, 2) + Math.pow(yOne, 2)) * (Math.pow(xTwo, 2) + Math.pow(yTwo, 2)));
-            System.out.printf("The figure area %.2f", Math.sqrt(1 - Math.pow(cos, 2)) * firstDiagonal * secondDiagonal / 2);
+            area = Math.sqrt(1 - Math.pow(cos, 2)) * firstDiagonal * secondDiagonal / 2;
+            System.out.printf("The figure area %.2f", area);
 
         } else if (coords.get(0).size() == Const.XYZ_COORDS) {
             double xLine = Math.pow(coords.get(Const.POINT_TWO).get(Const.X_FROM_COORDS) - coords.get(Const.POINT_ZERO).get(Const.X_FROM_COORDS), 2);
@@ -113,12 +115,15 @@ public class Parallelogram extends Figure {
             double zTwo = coords.get(Const.POINT_THREE).get(Const.Z_FROM_COORDS) - coords.get(Const.POINT_ONE).get(Const.Z_FROM_COORDS);
             
             double cos = (xOne * xTwo + yOne * yTwo + zOne * zTwo) / Math.sqrt((Math.pow(xOne, 2) + Math.pow(yOne, 2) + Math.pow(zOne, 2)) * (Math.pow(xTwo, 2) + Math.pow(yTwo, 2) + Math.pow(zOne, 2)));
-            System.out.printf("The figure area %.2f", Math.sqrt(1 - Math.pow(cos, 2)) * firstDiagonal * secondDiagonal / 2);
+            area = Math.sqrt(1 - Math.pow(cos, 2)) * firstDiagonal * secondDiagonal / 2;
+            System.out.printf("The figure area %.2f", area);
         }
+        return area;
     }
 
     @Override
-    public void isPerimeter() {
+    public double isPerimeter() {
+        double perimeter = 0;
         if (coords.get(0).size() == Const.XY_COORDS) {
             double xLine = Math.pow(coords.get(Const.POINT_ONE).get(Const.X_FROM_COORDS) - coords.get(Const.POINT_ZERO).get(Const.X_FROM_COORDS), 2);
             double yLine = Math.pow(coords.get(Const.POINT_ONE).get(Const.Y_FROM_COORDS) - coords.get(Const.POINT_ZERO).get(Const.Y_FROM_COORDS), 2);
@@ -128,7 +133,8 @@ public class Parallelogram extends Figure {
             yLine = Math.pow(coords.get(Const.POINT_TWO).get(Const.Y_FROM_COORDS) - coords.get(Const.POINT_ONE).get(Const.Y_FROM_COORDS), 2);
             double secondLine = Math.sqrt(xLine + yLine);
 
-            System.out.printf("\nThe figure perimeter %.2f", firstLine * 2 + secondLine * 2);
+            perimeter = firstLine * 2 + secondLine * 2;
+            System.out.printf("\nThe figure perimeter %.2f", perimeter);
         } else if (coords.get(0).size() == Const.XYZ_COORDS) {
             double xLine = Math.pow(coords.get(Const.POINT_ONE).get(Const.X_FROM_COORDS) - coords.get(Const.POINT_ZERO).get(Const.X_FROM_COORDS), 2);
             double yLine = Math.pow(coords.get(Const.POINT_ONE).get(Const.Y_FROM_COORDS) - coords.get(Const.POINT_ZERO).get(Const.Y_FROM_COORDS), 2);
@@ -140,7 +146,9 @@ public class Parallelogram extends Figure {
             zLine = Math.pow(coords.get(Const.POINT_TWO).get(Const.Z_FROM_COORDS) - coords.get(Const.POINT_ONE).get(Const.Z_FROM_COORDS), 2);
             double secondLine = Math.sqrt(xLine + yLine + zLine);
 
-            System.out.printf("\nThe figure perimeter %.2f", firstLine * 2 + secondLine * 2);
+            perimeter = firstLine * 2 + secondLine * 2;
+            System.out.printf("\nThe figure perimeter %.2f", perimeter);
         }
+        return perimeter;
     }
 }
