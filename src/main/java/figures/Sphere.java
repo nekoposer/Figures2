@@ -15,6 +15,11 @@ public class Sphere extends Figure {
     public boolean isValid() {
         if (coords.size() == 2) {
             if ((coords.get(0).size() == coords.get(1).size()) && (coords.get(0).size() == Const.XY_COORDS || coords.get(0).size() == Const.XYZ_COORDS)) {
+                if (coords.get(Const.POINT_ZERO).get(Const.X_FROM_COORDS) == coords.get(Const.POINT_ONE).get(Const.X_FROM_COORDS)
+                    && coords.get(Const.POINT_ZERO).get(Const.Y_FROM_COORDS) == coords.get(Const.POINT_ONE).get(Const.Y_FROM_COORDS)
+                    && coords.get(Const.POINT_ZERO).get(Const.Z_FROM_COORDS) == coords.get(Const.POINT_ONE).get(Const.Z_FROM_COORDS)) {
+                    return false;
+                }
                 System.out.println("The figure is valid");
                 return true;
             }

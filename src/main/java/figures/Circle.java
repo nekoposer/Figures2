@@ -14,7 +14,8 @@ public class Circle extends Figure {
     @Override
     public boolean isValid() {
         if (coords.size() == 2) {
-            if ((coords.get(Const.POINT_ZERO).size() == coords.get(Const.POINT_ONE).size() && (coords.get(Const.POINT_ZERO).size() == Const.XY_COORDS || coords.get(Const.POINT_ZERO).size() == Const.XYZ_COORDS))) {
+            if ((coords.get(Const.POINT_ZERO).size() == coords.get(Const.POINT_ONE).size()
+                 && (coords.get(Const.POINT_ZERO).size() == Const.XY_COORDS || coords.get(Const.POINT_ZERO).size() == Const.XYZ_COORDS))) {
                 if (coords.get(Const.POINT_ZERO).size() == Const.XY_COORDS) {
                     if (coords.get(Const.POINT_ZERO).get(Const.X_FROM_COORDS) == coords.get(Const.POINT_ONE).get(Const.X_FROM_COORDS)
                         && coords.get(Const.POINT_ZERO).get(Const.Y_FROM_COORDS) == coords.get(Const.POINT_ONE).get(Const.Y_FROM_COORDS)) {
@@ -63,5 +64,4 @@ public class Circle extends Figure {
         System.out.printf("The figure perimeter %.2f", perimeter);
         return perimeter;
     }
-
 }

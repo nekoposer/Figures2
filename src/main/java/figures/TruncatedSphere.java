@@ -13,6 +13,9 @@ public class TruncatedSphere extends Figure {
 
     @Override
     public boolean isValid() {
+        if (coords.size() != Const.POINT_THREE) {
+            return false;
+        }
         if (coords.get(Const.POINT_ZERO).size() == Const.XYZ_COORDS
             && coords.get(Const.POINT_ONE).size() == Const.XYZ_COORDS
             && coords.get(Const.POINT_TWO).size() == Const.XYZ_COORDS) {

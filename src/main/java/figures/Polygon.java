@@ -63,7 +63,8 @@ public class Polygon extends Figure {
             double Line = Math.sqrt(xLine + yLine);
             perimeter += Line;
         }
-        perimeter += Math.sqrt(Math.pow(coords.get(0).get(Const.X_FROM_COORDS) - coords.get(coords.size() - 1).get(Const.X_FROM_COORDS), 2) + Math.pow(coords.get(0).get(Const.Y_FROM_COORDS) - coords.get(coords.size() - 1).get(Const.Y_FROM_COORDS), 2));
+        perimeter += Math.sqrt(Math.pow(coords.get(0).get(Const.X_FROM_COORDS) - coords.get(coords.size() - 1).get(Const.X_FROM_COORDS), 2)
+                + Math.pow(coords.get(0).get(Const.Y_FROM_COORDS) - coords.get(coords.size() - 1).get(Const.Y_FROM_COORDS), 2));
         System.out.printf("The figure perimeter %.2f", perimeter);
         return perimeter;
     }

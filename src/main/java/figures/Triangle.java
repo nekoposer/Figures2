@@ -76,5 +76,4 @@ public class Triangle extends Figure {
         System.out.printf("\nThe figure perimeter %.2f", perimeter);
         return perimeter;
     }
-
 }

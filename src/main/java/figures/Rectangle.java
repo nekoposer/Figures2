@@ -12,6 +12,9 @@ public class Rectangle extends Figure {
 
     @Override
     public boolean isValid() {
+        if (coords.size() != Const.POINT_THREE) {
+            return false;
+        }
         if (coords.get(Const.POINT_ZERO).size() == Const.XY_COORDS
             && coords.get(Const.POINT_ONE).size() == Const.XY_COORDS
             && coords.get(Const.POINT_TWO).size() == Const.XY_COORDS

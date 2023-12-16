@@ -12,6 +12,9 @@ public class Square extends Figure {
 
     @Override
     public boolean isValid() {
+        if (coords.size() != Const.NUMBER_SQUARE_COORDS) {
+            return false;
+        }
         if (coords.get(Const.POINT_ZERO).size() == Const.XY_COORDS
             && coords.get(Const.POINT_ONE).size() == Const.XY_COORDS
             && coords.get(Const.POINT_TWO).size() == Const.XY_COORDS

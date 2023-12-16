@@ -37,15 +37,13 @@ public class Figure {
     }
 
     public double isArea() {
-        double area = 0;
         System.out.println("The figure has no area");
-        return area;
+        return -1;
     }
 
     public double isPerimeter() {
-        double perimeter = 0;
         System.out.println("The figure has no perimeter");
-        return perimeter;
+        return -1;
     }
 }
 
